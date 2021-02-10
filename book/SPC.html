@@ -327,8 +327,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-6"><a href="SPC.html#cb8-6"></a>sp4<span class="op">$</span>clay <span class="co"># vector of clay content (horizon data)</span></span></code></pre></div>
 <pre class="outputBlock"><code>##  [1] 21 27 32 55 25 34  3 15 27 32 25 31 33 13 21 23 15 17 12 19 14 14 22 25 40 51 67 24 25 32</code></pre>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r codeBlock"><code class="sourceCode r"><span id="cb10-1"><a href="SPC.html#cb10-1"></a>sp4<span class="op">$</span>elevation <span class="co"># vector of simulated elevation (site data)</span></span></code></pre></div>
-<pre class="outputBlock"><code>##  [1]  877.0526 1263.6217  747.9072  929.1071  928.9107  974.1478  663.9727  822.5178 1189.2670
-## [10] 1212.7675</code></pre>
+<pre class="outputBlock"><code>##  [1] 1057.9340 1093.8384 1070.2459  945.5708  799.5650  891.9214 1018.0275  941.4441  804.8106
+## [10]  967.5747</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r codeBlock"><code class="sourceCode r"><span id="cb12-1"><a href="SPC.html#cb12-1"></a><span class="co"># assign a single single value into horizon-level attributes</span></span>
 <span id="cb12-2"><a href="SPC.html#cb12-2"></a>sp4<span class="op">$</span>constant &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>, <span class="dt">times=</span><span class="kw">nrow</span>(sp4))</span>
 <span id="cb12-3"><a href="SPC.html#cb12-3"></a></span>
@@ -373,12 +373,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## ----- Sites (6 / 10 rows  |  4 / 4 columns) -----
 ##         id elevation constant group
-##     colusa  877.0526        1     A
-##      glenn 1263.6217        1     B
-##      kings  747.9072        1     A
-##   mariposa  929.1071        1     B
-##  mendocino  928.9107        1     A
-##       napa  974.1478        1     B
+##     colusa 1057.9340        1     A
+##      glenn 1093.8384        1     B
+##      kings 1070.2459        1     A
+##   mariposa  945.5708        1     B
+##  mendocino  799.5650        1     A
+##       napa  891.9214        1     B
 ## [... more sites ...]
 ## 
 ## Spatial Data: [EMPTY]</code></pre>
@@ -453,16 +453,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-8"><a href="SPC.html#cb18-8"></a><span class="co"># extract coordinates as matrix</span></span>
 <span id="cb18-9"><a href="SPC.html#cb18-9"></a><span class="kw">coordinates</span>(sp4)</span></code></pre></div>
 <pre class="outputBlock"><code>##           x       y
-## 1  353962.5 4109544
-## 2  354101.2 4109680
-## 3  353925.4 4109490
-## 4  354103.8 4109436
-## 5  353825.7 4109639
-## 6  353865.4 4109367
-## 7  354035.4 4109535
-## 8  353988.3 4109564
-## 9  354119.8 4109495
-## 10 354107.9 4109693</code></pre>
+## 1  354153.6 4109347
+## 2  353857.6 4109691
+## 3  353989.1 4109398
+## 4  354060.3 4109402
+## 5  353916.7 4109543
+## 6  354028.7 4109642
+## 7  354025.1 4109560
+## 8  353893.8 4109534
+## 9  354013.5 4109473
+## 10 354118.1 4109563</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r codeBlock"><code class="sourceCode r"><span id="cb20-1"><a href="SPC.html#cb20-1"></a><span class="co"># get/set spatial reference system using PROJ4 syntax</span></span>
 <span id="cb20-2"><a href="SPC.html#cb20-2"></a><span class="kw">proj4string</span>(sp4) &lt;-<span class="st"> &#39;+proj=utm +zone=11 +datum=NAD83&#39;</span></span>
 <span id="cb20-3"><a href="SPC.html#cb20-3"></a><span class="kw">proj4string</span>(sp4)</span></code></pre></div>
@@ -1039,14 +1039,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb84-27"><a href="SPC.html#cb84-27"></a><span class="co"># note: result is in long-format</span></span>
 <span id="cb84-28"><a href="SPC.html#cb84-28"></a><span class="co"># note: horizon names are lost due to aggregation</span></span>
 <span id="cb84-29"><a href="SPC.html#cb84-29"></a><span class="kw">head</span>(d.gsm, <span class="dv">7</span>)</span></code></pre></div>
-<pre class="outputBlock"><code>##   variable id     value top bottom contributing_fraction
-## 1       p1  1 62.569642   0      5             1.0000000
-## 2       p1  1 62.421604   5     15             1.0000000
-## 3       p1  1 62.076180  15     30             1.0000000
-## 4       p1  1 56.172218  30     60             1.0000000
-## 5       p1  1 44.245616  60    100             1.0000000
-## 6       p1  1 35.929734 100    200             0.7105263
-## 7       p1  2  7.500784   0      5             1.0000000</code></pre>
+<pre class="outputBlock"><code>##   variable id    value top bottom contributing_fraction
+## 1       p1  1 48.63430   0      5                1.0000
+## 2       p1  1 48.63430   5     15                1.0000
+## 3       p1  1 54.89213  15     30                1.0000
+## 4       p1  1 51.68713  30     60                1.0000
+## 5       p1  1 43.65356  60    100                1.0000
+## 6       p1  1 36.60044 100    200                0.5375
+## 7       p1  2 16.88935   0      5                1.0000</code></pre>
 <p>A simple graphical comparison of the original and re-aligned soil profile data.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r codeBlock"><code class="sourceCode r"><span id="cb86-1"><a href="SPC.html#cb86-1"></a><span class="co"># reshape to wide format</span></span>
 <span id="cb86-2"><a href="SPC.html#cb86-2"></a><span class="co"># this scales to &gt; 1 aggregated variables</span></span>
