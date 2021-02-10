@@ -1,0 +1,43 @@
+--- 
+title: "Algorithms for Quantitative Pedology"
+author: "Soil Survey Staff"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+---
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+```{r include=FALSE}
+# This sets up the whole book defaults for chunk options
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, 
+                      eval = TRUE, 
+                      class.source = "codeBlock", class.output = "outputBlock",
+                      fig.retina = 2, fig.align = 'center',
+                      tidy=FALSE, verbose=FALSE, cache=FALSE,
+                      dev = 'png')
+``` 
+
+
+# Introduction
+
+## Prologue
+
+
+## Notes
+
+<div style = "font-size: 80%;">
+This document is based on `aqp` version `r utils::packageDescription("aqp", field="Version")` and `soilDB` version `r utils::packageDescription("soilDB", field="Version")` and `sharpshootR` version `r utils::packageDescription("sharpshootR", field="Version")`.
+</div>
+
+

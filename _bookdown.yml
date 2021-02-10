@@ -1,10 +1,6 @@
-title: "AQP"
-author: "Soil Survey Staff"
-date: "`r Sys.Date()`"
-site: "bookdown::bookdown_site"
-output:
-  bookdown::gitbook: default
-documentclass: book
-bibliography: "book.bib"
-biblio-style: apalike
-link-citations: yes
+book_filename: "aqpbook"
+output_dir: "_aqpbook"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
